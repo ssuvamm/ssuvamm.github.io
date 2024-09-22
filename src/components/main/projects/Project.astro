@@ -17,7 +17,7 @@ const { technologies, title, img, description, link } = Astro.props;
 ---
 
 <li class="li-project">
-  <img src={img} alt={title} loading="lazy" />
+  <img src={img} alt={title} title={title} loading="lazy" />
   <p class="title-project">{title}</p>
   <p class="description-project">
     {description}
