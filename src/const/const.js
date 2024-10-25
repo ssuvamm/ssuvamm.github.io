@@ -168,6 +168,26 @@ export const skills = [
 
 export const projects = [
   {
+    img: "../../../img/sritama_basu.webp",
+    title: "Sritama Basu - Portfolio Website",
+    link: "https://sritamabasu.com/",
+    description: `Portfolio Website built on NextJS and TailwindCSS.`,
+    technologies: [
+      {
+        icon: IconKeys.nextjs,
+      },
+      {
+        icon: IconKeys.tailwind,
+      },
+      {
+        icon: IconKeys.react,
+      },
+      {
+        icon: IconKeys.github,
+      },
+    ],
+  },
+  {
     img: "../../../img/woodrockgroup.webp",
     title: "Woodrock Group - Company Website",
     link: "https://woodrockgroup.in",
