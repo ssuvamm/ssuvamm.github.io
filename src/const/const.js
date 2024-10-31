@@ -170,7 +170,7 @@ export const projects = [
   {
     img: "../../../img/sritama_basu.webp",
     title: "Sritama Basu - Portfolio Website",
-    link: "https://sritamabasu.com/",
+    link: "https://sritamabasu.com",
     description: `Portfolio Website built on NextJS and TailwindCSS.`,
     technologies: [
       {
