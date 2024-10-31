@@ -5,7 +5,7 @@ import { defineConfig } from "astro/config";
 // If you want to remove vercel from your project you can do npm uninstall vercel
 export default defineConfig({
   site: "https://ssuvamm.github.io",
-  site: "https://suvam.suvamsinha.us.kg",
+  site: "https://suvamsinha.us.kg",
   // base: "ssuvamm",
   devToolbar: {
     enabled: false,
