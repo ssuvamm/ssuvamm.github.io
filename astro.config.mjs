@@ -1,4 +1,5 @@
 import { defineConfig } from "astro/config";
+import sitemap from "@astrojs/sitemap";
 // import vercel from "@astrojs/vercel/serverless";
 
 // If you are not going to use vercel analytics you can delete the analytics
@@ -10,6 +11,7 @@ export default defineConfig({
   devToolbar: {
     enabled: false,
   },
+  integrations: [sitemap()],
 });
 
 //If you don't have vercel the configuration will be empty
