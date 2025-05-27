@@ -46,10 +46,28 @@ import Footer from "../components/footer/Footer.astro";
       src="https://kit.fontawesome.com/2898a0ac51.js"
       crossorigin="anonymous"></script>
     <title>Portfolio | Suvam Sinha</title>
+    <style>
+      body {
+        opacity: 0; /* Initially hide the body */
+      }
+    </style>
   </head>
   <body>
     <Header />
     <Main />
     <Footer />
+
+    <script type="module"> // Important: type="module" for imports
+      import { gsap } from 'gsap';
+
+      document.addEventListener('DOMContentLoaded', () => {
+        gsap.to('body', {
+          opacity: 1,
+          duration: 0.8, // Adjust duration as desired
+          delay: 0.1,    // Optional small delay
+          ease: 'power1.inOut'
+        });
+      });
+    </script>
   </body>
 </html>

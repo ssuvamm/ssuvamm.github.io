@@ -39,6 +39,20 @@
   <div class="menu-drop"></div>
 
   <script>
+    import { fadeIn } from '../../animations/scrollAnimations.js';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const headerTitle = document.querySelector('.header h1');
+      if (headerTitle) {
+        fadeIn(headerTitle, 0.2);
+      }
+
+      const navLinks = document.querySelectorAll('.nav .ul-nav .li-nav');
+      navLinks.forEach((link, index) => {
+        fadeIn(link, 0.4 + index * 0.1); // Staggered delay
+      });
+    });
+
     const $menu = document.querySelector(".nav");
     const $menuDrop = document.querySelector(".menu-drop");
     const $btnmenu = document.querySelector(".btn-menu");

@@ -81,7 +81,42 @@ import photoperfil from "../../../../public/img/photo-perfil.webp";
 </div>
 
 <script>
-  const letters = document.querySelectorAll(".p-profesion");
+  import { fadeIn } from '../../../animations/scrollAnimations.js';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const nameHeading = document.querySelector('.text-name');
+    if (nameHeading) {
+      fadeIn(nameHeading, 0.2);
+    }
+
+    const professionSpans = document.querySelectorAll('.p-profession');
+    professionSpans.forEach((span, index) => {
+      fadeIn(span, 0.4 + index * 0.05);
+    });
+
+    const introParagraph = document.querySelector('.p-presentation');
+    if (introParagraph) {
+      fadeIn(introParagraph, 0.6);
+    }
+
+    const actionButtons = document.querySelectorAll('.container-curriculum a');
+    actionButtons.forEach((button, index) => {
+      fadeIn(button, 0.8 + index * 0.1);
+    });
+
+    const socialContainer = document.querySelector('.container-social');
+    if (socialContainer) {
+      fadeIn(socialContainer, 1.0);
+    }
+
+    const profilePic = document.querySelector('.photo-perfil');
+    if (profilePic) {
+      fadeIn(profilePic, 0.5);
+    }
+  });
+
+  // Corrected selector from .p-profesion to .p-profession
+  const letters = document.querySelectorAll(".p-profession"); 
   letters.forEach((letter) => {
     letter.addEventListener("mouseenter", () => {
       toogle(letter);

@@ -25,6 +25,17 @@ import Project from "./Project.astro";
   </div>
 </section>
 
+<script>
+  import { fadeIn } from '../../../animations/scrollAnimations.js';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const sectionTitle = document.querySelector('.title-projects');
+    if (sectionTitle) {
+      fadeIn(sectionTitle, 0.2); // Apply fadeIn with a small delay
+    }
+  });
+</script>
+
 <style>
   .linear-grandient-1 {
     position: absolute;

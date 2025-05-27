@@ -14,9 +14,10 @@ export interface Props {
 }
 
 const { technologies, title, img, description, link } = Astro.props;
+const uniqueId = `project-${Math.random().toString(36).substr(2, 9)}`;
 ---
 
-<li class="li-project">
+<li class="li-project" id={uniqueId}>
   <img src={img} alt={title} title={title} loading="lazy" />
   <p class="title-project">{title}</p>
   <p class="description-project">
@@ -35,6 +36,17 @@ const { technologies, title, img, description, link } = Astro.props;
     <a href={link} class="a-project" target="_blank">See Project</a>
   </div>
 </li>
+
+<script define:vars={{ elementId: uniqueId }}>
+  import { fadeIn } from '../../../animations/scrollAnimations.js';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const projectElement = document.getElementById(elementId);
+    if (projectElement) {
+      fadeIn(projectElement);
+    }
+  });
+</script>
 
 <style>
   .li-project {
