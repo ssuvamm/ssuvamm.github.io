@@ -46,11 +46,6 @@ import Footer from "../components/footer/Footer.astro";
       src="https://kit.fontawesome.com/2898a0ac51.js"
       crossorigin="anonymous"></script>
     <title>Portfolio | Suvam Sinha</title>
-    <style>
-      body {
-        opacity: 0; /* Initially hide the body */
-      }
-    </style>
   </head>
   <body>
     <Header />
@@ -61,10 +56,14 @@ import Footer from "../components/footer/Footer.astro";
       import { gsap } from 'gsap';
 
       document.addEventListener('DOMContentLoaded', () => {
+        // Explicitly set opacity to 0 with GSAP first
+        gsap.set('body', { opacity: 0 });
+
+        // Then animate to opacity 1
         gsap.to('body', {
           opacity: 1,
-          duration: 0.8, // Adjust duration as desired
-          delay: 0.1,    // Optional small delay
+          duration: 0.8,
+          delay: 0.1, // Small delay can still be useful
           ease: 'power1.inOut'
         });
       });

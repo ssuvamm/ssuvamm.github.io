@@ -45,17 +45,46 @@
 </footer>
 
 <script>
-  import { fadeIn } from '../../animations/scrollAnimations.js';
+  import { gsap } from 'gsap'; // Import gsap directly
+  import { ScrollTrigger } from 'gsap/ScrollTrigger'; // Import ScrollTrigger
+
+  gsap.registerPlugin(ScrollTrigger); // Register ScrollTrigger
 
   document.addEventListener('DOMContentLoaded', () => {
     const sectionTitle = document.querySelector('.title-contact');
     if (sectionTitle) {
-      fadeIn(sectionTitle, 0.2);
+      gsap.fromTo(sectionTitle,
+        { autoAlpha: 0, y: 20 },
+        {
+          autoAlpha: 1,
+          y: 0,
+          duration: 0.8,
+          delay: 0.2,
+          scrollTrigger: {
+            trigger: sectionTitle,
+            start: 'top bottom-=50px', // Trigger when top of title is 50px from viewport bottom
+            once: true,
+          }
+        }
+      );
     }
 
     const contactItems = document.querySelectorAll('.li-contact');
     contactItems.forEach((item, index) => {
-      fadeIn(item, 0.3 + index * 0.1); // Staggered delay
+      gsap.fromTo(item,
+        { autoAlpha: 0, y: 20 },
+        {
+          autoAlpha: 1,
+          y: 0,
+          duration: 0.8,
+          delay: 0.3 + index * 0.1, // Original stagger
+          scrollTrigger: {
+            trigger: item,
+            start: 'top bottom-=50px', // Trigger when top of item is 50px from viewport bottom
+            once: true,
+          }
+        }
+      );
     });
   });
 </script>
