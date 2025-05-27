@@ -23,6 +23,22 @@ import { getIconComponent } from "../../../icons/IconAll.astro";
   </div>
 </section>
 
+<script>
+  import { fadeIn } from '../../../animations/scrollAnimations.js';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const sectionTitle = document.querySelector('.title-skills');
+    if (sectionTitle) {
+      fadeIn(sectionTitle, 0.2);
+    }
+
+    const skillItems = document.querySelectorAll('.li-skills');
+    skillItems.forEach((item, index) => {
+      fadeIn(item, 0.3 + index * 0.08); // Staggered delay
+    });
+  });
+</script>
+
 <style>
   .section-skill {
     position: relative;

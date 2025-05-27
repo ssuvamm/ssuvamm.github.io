@@ -25,6 +25,27 @@
   src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"
 ></script>
 
+<script>
+  import { fadeIn } from '../../../animations/scrollAnimations.js';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const sectionTitle = document.querySelector('.title-about');
+    if (sectionTitle) {
+      fadeIn(sectionTitle, 0.2);
+    }
+
+    const paragraph = document.querySelector('.container-text-about p');
+    if (paragraph) {
+      fadeIn(paragraph, 0.4);
+    }
+
+    const lottieContainer = document.querySelector('.container-svg');
+    if (lottieContainer) {
+      fadeIn(lottieContainer, 0.3);
+    }
+  });
+</script>
+
 <style>
   .linear-grandient-1 {
     position: absolute;

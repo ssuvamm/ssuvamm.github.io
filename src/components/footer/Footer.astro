@@ -44,6 +44,22 @@
   </section>
 </footer>
 
+<script>
+  import { fadeIn } from '../../animations/scrollAnimations.js';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const sectionTitle = document.querySelector('.title-contact');
+    if (sectionTitle) {
+      fadeIn(sectionTitle, 0.2);
+    }
+
+    const contactItems = document.querySelectorAll('.li-contact');
+    contactItems.forEach((item, index) => {
+      fadeIn(item, 0.3 + index * 0.1); // Staggered delay
+    });
+  });
+</script>
+
 <style>
   .linear-grandient-1 {
     position: absolute;
